@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = prompt('Nhập kích thước mảng');
+        let arr = [];
+        for(let i = 0; i<num; i ++){
+            arr[i] = new Array()
+            for(let j = 0; j<num;j++){
+                arr[i][j]= Math.floor(Math.random()*81+10)
+            }
+        }
+
+        // Câu 1
+        let sumEven = 0;
+        for(let i = 0;i<num;i++){
+            for(let j = 0;j<num;j++){
+                if(arr[i][j]%2 == 0){
+                    sumEven += arr[i][j]; 
+                }
+            }
+        }
+        console.log(`Tổng các số chẵn là: ${sumEven}`)
+
+        // Câu 2
+        let sumCheoChinh = 0;
+        for(let i = 0;i<num;i++){
+            for(let j = 0;j<num;j++){
+                if(i==j){
+                    sumCheoChinh += arr[i][j];
+                }
+            }
+        }
+        console.log(`Tổng các số trên đường chéo chính là: ${sumCheoChinh}`);
+        
+        // Câu 3
+        let sumCheoPhu = 0;
+        for(let i=1;i<=num;i++){
+            sumCheoPhu += arr[num-i][i-1]
+        }
+        console.log(`Tổng các số trên đường chéo phụ là: ${sumCheoPhu}`);
+        
+        // Câu 4
+        let sumBienTop = 0;
+        let sumBienBot = 0;
+        let sumBienRight = 0;
+        let sumBienLeft = 0;
+        for(let i=0;i<num;i++){
+            sumBienTop += arr[0][i];
+            sumBienBot += arr[num-1][i];
+        }
+        for(let j =1;j<num-1;j++){
+            sumBienLeft += arr[j][0]
+            sumBienRight += arr[j][num-1]
+        }
+        let sumBien = sumBienRight + sumBienTop + sumBienBot + sumBienLeft;
+        console.log(`Tổng các số trên đường biên là: ${sumBien}`);
+
+        // Câu 5
+        let showArr ='';
+        for (let i =0;i<num;i++){
+            showArr += '<br>'
+            for(let j = 0; j <num;j++){
+                showArr += arr[i][j] + '\xa0\xa0';
+            }
+        }
+        document.write(showArr+'<br>')
+
+        // Câu 6
+        let showTriangle1 ='';
+        for (let i =0;i<num;i++){
+            showTriangle1 += '<br>'
+            for(let j = 0; j <=i;j++){
+                showTriangle1 += arr[i][j] + '\xa0\xa0';
+            }
+        }
+        document.write(showTriangle1+'<br>')
+
+        // Câu 7
+        let showTriangle2 ='';
+        for (let i =4;i>=0;i--){
+            showTriangle2 += '<br>'
+            for(let j = 0; j <=i;j++){
+                showTriangle2 += arr[i][j] + '\xa0\xa0';
+            }
+        }
+        document.write(showTriangle2)
+    </script>
+</body>
+</html>
