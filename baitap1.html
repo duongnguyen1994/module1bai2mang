@@ -25,7 +25,7 @@
                 }
             }
         }
-        console.log(`Tổng các số chẵn là: ${sumEven}`)
+        document.write(`Tổng các số chẵn là: ${sumEven}<br>`)
 
         // Câu 2
         let sumCheoChinh = 0;
@@ -36,14 +36,14 @@
                 }
             }
         }
-        console.log(`Tổng các số trên đường chéo chính là: ${sumCheoChinh}`);
+        document.write(`Tổng các số trên đường chéo chính là: ${sumCheoChinh}<br>`);
         
         // Câu 3
         let sumCheoPhu = 0;
         for(let i=1;i<=num;i++){
             sumCheoPhu += arr[num-i][i-1]
         }
-        console.log(`Tổng các số trên đường chéo phụ là: ${sumCheoPhu}`);
+        document.write(`Tổng các số trên đường chéo phụ là: ${sumCheoPhu}<br>`);
         
         // Câu 4
         let sumBienTop = 0;
@@ -59,7 +59,7 @@
             sumBienRight += arr[j][num-1]
         }
         let sumBien = sumBienRight + sumBienTop + sumBienBot + sumBienLeft;
-        console.log(`Tổng các số trên đường biên là: ${sumBien}`);
+        document.write(`Tổng các số trên đường biên là: ${sumBien}<br>`);
 
         // Câu 5
         let showArr ='';
